@@ -14,6 +14,7 @@ uvicorn app.main:app --reload
 ```
 fastapi
 uvicorn
+pysondb
 ```
 
 ## Docker

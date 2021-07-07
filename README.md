@@ -16,6 +16,14 @@ fastapi
 uvicorn
 ```
 
+## Docker
+
+```
+docker build -t fastapi
+docker run -p 8000:80 fastapi # app is available at localhost:8000
+```
+
 ## Origin of files
 
 - [`.gitignore`](https://github.com/github/gitignore/blob/master/Python.gitignore)
+- [`.Dockerignore`](https://github.com/GoogleCloudPlatform/getting-started-python/blob/main/optional-kubernetes-engine/.dockerignore)

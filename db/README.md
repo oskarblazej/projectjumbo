@@ -2,13 +2,17 @@
 
 We decided to use [pysonDB](https://github.com/fredysomy/pysonDB) as a placeholder database. Each `.json` file represents collection in NoSQL database.
 
+## Default user
+
+By default there is provided one user, with username "test" and password "test".
+
 ## Models
 
 user:
 ```js
 {
     "id": 198396844763547629,
-    "name": "username",
+    "name": "username", // unique
     "password": "hashed-password",
 }
 ```

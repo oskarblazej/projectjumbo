@@ -6,6 +6,23 @@ We decided to use [pysonDB](https://github.com/fredysomy/pysonDB) as a placehold
 
 By default there is provided one user, with username "test" and password "test".
 
+## Adding user
+
+```py
+password = "new user password"
+username = "new user name"
+
+from passlib.hash import bcrypt
+from pysondb import db
+
+users = db.getDb("db/users.json")
+hashed = bcrypt.hash(password)
+users.add({
+    "name": username,
+    "password": hashed
+})
+```
+
 ## Models
 
 user:

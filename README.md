@@ -16,6 +16,7 @@ fastapi
 uvicorn
 pysondb
 passlib[bcrypt]
+python-jose[cryptography]
 ```
 
 ## Docker

@@ -14,6 +14,7 @@ pyasn1==0.4.8
 pycparser==2.20
 pydantic==1.8.2
 pysondb==1.1.4
+python-dotenv==0.18.0
 python-jose==3.3.0
 rsa==4.7.2
 six==1.16.0

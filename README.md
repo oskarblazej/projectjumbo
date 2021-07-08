@@ -2,6 +2,12 @@
 
 ## Development
 
+Create `.env` file, and put `SECRET_KEY` in it
+```sh
+echo "SECRET_KEY=$(openssl rand -hex 32)" > .env
+```
+
+Create `venv`, install dependencies and run server
 ```
 python3 -m venv venv
 . venv/bin/activate
@@ -17,6 +23,7 @@ uvicorn
 pysondb
 passlib[bcrypt]
 python-jose[cryptography]
+python-dotenv
 ```
 
 ## Docker

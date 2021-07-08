@@ -3,11 +3,11 @@ from .db import users, todos
 from passlib.hash import bcrypt
 from pydantic import BaseModel
 from jose import jwt
+from dotenv import dotenv_values
 
-# openssl rand -hex 32
-SECRET_KEY = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
 ALGORITHM = "HS256"
 
+config = dotenv_values(".env")
 app = FastAPI()
 
 class Credentials(BaseModel):
@@ -33,6 +33,6 @@ async def login(credentials: Credentials, response: Response):
         response.status_code = 403
         return {"error": "bad username or password"}
 
-    token = jwt.encode({"name": user["name"], "id": user["id"]}, SECRET_KEY, algorithm=ALGORITHM)
+    token = jwt.encode({"name": user["name"], "id": user["id"]}, config["SECRET_KEY"], algorithm=ALGORITHM)
 
     return token

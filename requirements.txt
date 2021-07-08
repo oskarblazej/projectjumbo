@@ -1,10 +1,14 @@
 asgiref==3.4.1
+bcrypt==3.2.0
 beautifultable==1.0.1
+cffi==1.14.5
 click==8.0.1
 fastapi==0.66.0
 filelock==3.0.12
 fire==0.4.0
 h11==0.12.0
+passlib==1.7.4
+pycparser==2.20
 pydantic==1.8.2
 pysondb==1.1.4
 six==1.16.0

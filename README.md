@@ -15,6 +15,7 @@ uvicorn app.main:app --reload
 fastapi
 uvicorn
 pysondb
+passlib[bcrypt]
 ```
 
 ## Docker

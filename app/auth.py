@@ -32,6 +32,7 @@ async def login(credentials: Credentials, response: Response):
         response.status_code = 403
         return {"detail": "Bad username or password"}
 
+    # TODO: set token expire time
     token = jwt.encode(
         {"name": user["name"], "id": user["id"]}, config["SECRET_KEY"], algorithm=ALGORITHM)
 

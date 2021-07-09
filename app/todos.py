@@ -14,7 +14,15 @@ class Todo(BaseModel):
 
 @todos_router.get("/todo")
 async def get_todos(user: set = Depends(get_user)):
-    return todos.getBy({"user": user["id"]})
+    todos_list = todos.getBy({"user": user["id"]})
+
+    # convert intigers into strings to avoid bugs
+    # ¯\_( ͡° ͜ʖ ͡°)_/¯
+    for todo in todos_list:
+        todo["user"] = str(todo["user"])
+        todo["id"] = str(todo["id"])
+
+    return todos_list
 
 
 @todos_router.post("/todo")

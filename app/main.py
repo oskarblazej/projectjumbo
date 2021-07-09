@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .auth import auth_router
 from .todos import todos_router
+from .static import static_router
 
 app = FastAPI()
 
@@ -16,3 +17,4 @@ app.add_middleware(
 
 app.include_router(auth_router)
 app.include_router(todos_router)
+app.include_router(static_router)

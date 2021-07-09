@@ -1,5 +1,28 @@
 # projectjumbo
 
+## Run with frontend
+
+```sh
+# checkout submodule from git
+git submodule update --init
+
+# setup frontend
+cd web
+echo "VITE_API_URL=" > .env.local
+npm install
+npm run build
+cd ..
+
+# setup backend
+echo "SECRET_KEY=$(openssl rand -hex 32)" > .env
+python3 -m venv venv
+. venv/bin/activate
+python3 -m pip install -r requirements.txt
+
+# run server
+uvicorn app.main:app --reload
+```
+
 ## Development
 
 Create `.env` file, and put `SECRET_KEY` in it
@@ -24,6 +47,7 @@ pysondb
 passlib[bcrypt]
 python-jose[cryptography]
 python-dotenv
+aiofiles
 ```
 
 ## Docker
